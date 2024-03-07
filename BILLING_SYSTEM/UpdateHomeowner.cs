@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BILLING_SYSTEM
 {
-    public partial class ConfigUI : Form
+    public partial class UpdateHomeowner : Form
     {
-        public ConfigUI()
+        public UpdateHomeowner()
         {
             InitializeComponent();
         }

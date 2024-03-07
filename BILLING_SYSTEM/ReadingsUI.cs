@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BILLING_SYSTEM
 {
@@ -15,6 +16,11 @@ namespace BILLING_SYSTEM
         public ReadingsUI()
         {
             InitializeComponent();
+        }
+
+        private void ReadingsUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

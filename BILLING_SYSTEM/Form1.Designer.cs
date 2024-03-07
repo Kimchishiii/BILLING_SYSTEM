@@ -34,27 +34,23 @@
             this.logoPicBox = new System.Windows.Forms.PictureBox();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.logopicturebox = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.settingsBTN = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.congifBTN = new System.Windows.Forms.Button();
+            this.configBTN = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.reportBTN = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.collectionsBTN = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ReadingsBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BillingsBTN = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Homeownerbtn = new System.Windows.Forms.Button();
-            this.backgroundpanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).BeginInit();
             this.logoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logopicturebox)).BeginInit();
-            this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -68,7 +64,6 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.logoPanel);
-            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
@@ -78,9 +73,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 629);
+            this.panel1.Size = new System.Drawing.Size(140, 781);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel9
             // 
@@ -124,53 +118,32 @@
             this.logopicturebox.TabIndex = 2;
             this.logopicturebox.TabStop = false;
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.settingsBTN);
-            this.panel8.Location = new System.Drawing.Point(7, 439);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(126, 42);
-            this.panel8.TabIndex = 4;
-            // 
-            // settingsBTN
-            // 
-            this.settingsBTN.BackColor = System.Drawing.Color.Transparent;
-            this.settingsBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("settingsBTN.BackgroundImage")));
-            this.settingsBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.settingsBTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settingsBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.settingsBTN.Location = new System.Drawing.Point(-41, -29);
-            this.settingsBTN.Name = "settingsBTN";
-            this.settingsBTN.Size = new System.Drawing.Size(179, 99);
-            this.settingsBTN.TabIndex = 8;
-            this.settingsBTN.UseVisualStyleBackColor = false;
-            // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.congifBTN);
-            this.panel7.Location = new System.Drawing.Point(7, 391);
+            this.panel7.Controls.Add(this.configBTN);
+            this.panel7.Location = new System.Drawing.Point(5, 391);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(126, 42);
             this.panel7.TabIndex = 3;
             // 
-            // congifBTN
+            // configBTN
             // 
-            this.congifBTN.BackColor = System.Drawing.Color.Transparent;
-            this.congifBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("congifBTN.BackgroundImage")));
-            this.congifBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.congifBTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.congifBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.congifBTN.Location = new System.Drawing.Point(-45, -29);
-            this.congifBTN.Name = "congifBTN";
-            this.congifBTN.Size = new System.Drawing.Size(179, 99);
-            this.congifBTN.TabIndex = 7;
-            this.congifBTN.UseVisualStyleBackColor = false;
-            this.congifBTN.Click += new System.EventHandler(this.congifBTN_Click);
+            this.configBTN.BackColor = System.Drawing.Color.Transparent;
+            this.configBTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("configBTN.BackgroundImage")));
+            this.configBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.configBTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.configBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.configBTN.Location = new System.Drawing.Point(-45, -29);
+            this.configBTN.Name = "configBTN";
+            this.configBTN.Size = new System.Drawing.Size(179, 99);
+            this.configBTN.TabIndex = 7;
+            this.configBTN.UseVisualStyleBackColor = false;
+            this.configBTN.Click += new System.EventHandler(this.configBTN_Click);
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.reportBTN);
-            this.panel6.Location = new System.Drawing.Point(7, 343);
+            this.panel6.Location = new System.Drawing.Point(5, 343);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(126, 42);
             this.panel6.TabIndex = 3;
@@ -192,7 +165,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.collectionsBTN);
-            this.panel5.Location = new System.Drawing.Point(7, 295);
+            this.panel5.Location = new System.Drawing.Point(5, 295);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(126, 42);
             this.panel5.TabIndex = 3;
@@ -213,30 +186,30 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Location = new System.Drawing.Point(7, 199);
+            this.panel4.Controls.Add(this.ReadingsBtn);
+            this.panel4.Location = new System.Drawing.Point(5, 199);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(126, 42);
             this.panel4.TabIndex = 3;
             // 
-            // button2
+            // ReadingsBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(-44, -35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 99);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ReadingsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ReadingsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ReadingsBtn.BackgroundImage")));
+            this.ReadingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ReadingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReadingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ReadingsBtn.Location = new System.Drawing.Point(-44, -35);
+            this.ReadingsBtn.Name = "ReadingsBtn";
+            this.ReadingsBtn.Size = new System.Drawing.Size(179, 99);
+            this.ReadingsBtn.TabIndex = 4;
+            this.ReadingsBtn.UseVisualStyleBackColor = false;
+            this.ReadingsBtn.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.BillingsBTN);
-            this.panel3.Location = new System.Drawing.Point(7, 247);
+            this.panel3.Location = new System.Drawing.Point(5, 247);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(126, 42);
             this.panel3.TabIndex = 3;
@@ -258,7 +231,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.Homeownerbtn);
-            this.panel2.Location = new System.Drawing.Point(7, 151);
+            this.panel2.Location = new System.Drawing.Point(5, 151);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(126, 42);
             this.panel2.TabIndex = 2;
@@ -275,35 +248,26 @@
             this.Homeownerbtn.Size = new System.Drawing.Size(179, 99);
             this.Homeownerbtn.TabIndex = 3;
             this.Homeownerbtn.UseVisualStyleBackColor = false;
-            this.Homeownerbtn.Click += new System.EventHandler(this.Homeownerbtn_Click);
-            // 
-            // backgroundpanel
-            // 
-            this.backgroundpanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backgroundpanel.BackgroundImage")));
-            this.backgroundpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.backgroundpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.backgroundpanel.Location = new System.Drawing.Point(140, 0);
-            this.backgroundpanel.Name = "backgroundpanel";
-            this.backgroundpanel.Size = new System.Drawing.Size(983, 629);
-            this.backgroundpanel.TabIndex = 2;
+            this.Homeownerbtn.Click += new System.EventHandler(this.Homeownerbtn_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 629);
-            this.Controls.Add(this.backgroundpanel);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1305, 781);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPicBox)).EndInit();
             this.logoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logopicturebox)).EndInit();
-            this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -326,16 +290,13 @@
         private System.Windows.Forms.PictureBox logopicturebox;
         private System.Windows.Forms.Button Homeownerbtn;
         private System.Windows.Forms.Button BillingsBTN;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button settingsBTN;
-        private System.Windows.Forms.Button congifBTN;
+        private System.Windows.Forms.Button ReadingsBtn;
+        private System.Windows.Forms.Button configBTN;
         private System.Windows.Forms.Button reportBTN;
         private System.Windows.Forms.Button collectionsBTN;
         private System.Windows.Forms.Panel logoPanel;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox logoPicBox;
-        private System.Windows.Forms.Panel backgroundpanel;
     }
 }
 

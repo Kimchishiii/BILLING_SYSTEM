@@ -22,54 +22,70 @@ namespace BILLING_SYSTEM
         {
 
         }
-
-        private void Homeownerbtn_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            HomeownersUI displayHomeownersUIForm = new HomeownersUI();
-            displayHomeownersUIForm.Show();
-
-            this.Show();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Homeownerbtn_Click_1(object sender, EventArgs e)
         {
-            ReadingsUI displayReadingsUIForm = new ReadingsUI();
-            displayReadingsUIForm.Show();
+            CloseCurrentForms();
+            HomeownersUI mdiChild = new HomeownersUI();
+            mdiChild.MdiParent = this;
+            mdiChild.Show();
+        }
 
-            this.Show();
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            CloseCurrentForms();
+            ReadingsUI mdiChild = new ReadingsUI();
+            mdiChild.MdiParent = this;
+            mdiChild.Show();
         }
 
         private void BillingsBTN_Click(object sender, EventArgs e)
         {
-            Billing displayBillingUIForm = new Billing();
-            displayBillingUIForm.Show();
-
-            this.Show();
+            CloseCurrentForms();
+            Billing displayBillingForm = new Billing();
+            displayBillingForm.MdiParent = this;
+            displayBillingForm.Show();
         }
 
         private void collectionsBTN_Click(object sender, EventArgs e)
         {
+            CloseCurrentForms();
             CollectionsUI displayCollectionsUIForm = new CollectionsUI();
+            displayCollectionsUIForm.MdiParent = this;
             displayCollectionsUIForm.Show();
-
-            this.Show();
         }
 
         private void reportBTN_Click(object sender, EventArgs e)
         {
+            CloseCurrentForms();
             ReportsUI displayReportsUIForm = new ReportsUI();
+            displayReportsUIForm.MdiParent = this;
             displayReportsUIForm.Show();
-
-            this.Show();
         }
 
-        private void congifBTN_Click(object sender, EventArgs e)
+        private void configBTN_Click(object sender, EventArgs e)
         {
-            ConfigUI displayConfigUIForm = ConfigUI();
-            displayConfigUIForm.Show();
+            CloseCurrentForms();
+           configurationUI displayconfigurationUIForm = new configurationUI();
+            displayconfigurationUIForm.MdiParent = this;
+            displayconfigurationUIForm.Show();
+        }
 
-            this.Show();
+        public void CloseCurrentForms()
+        {
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Close();
+            }
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

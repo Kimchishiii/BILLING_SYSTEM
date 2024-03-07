@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BILLING_SYSTEM
 {
-    public partial class SettingsUI : Form
+    public partial class configurationUI : Form
     {
-        public SettingsUI()
+        public configurationUI()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
