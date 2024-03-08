@@ -72,5 +72,13 @@ namespace BILLING_SYSTEM
                
             
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            UpdateHomeowner displayUpdateHomeownerForm = new UpdateHomeowner();
+            displayUpdateHomeownerForm.Show();
+
+            this.Show();
+        }
     }
 }
