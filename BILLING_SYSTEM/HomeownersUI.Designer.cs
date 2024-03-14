@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Search = new System.Windows.Forms.Label();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.ShowBTN = new System.Windows.Forms.Button();
             this.deleteBTN = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgRecords = new System.Windows.Forms.DataGridView();
-            this.btn_Search = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRecords)).BeginInit();
@@ -56,6 +56,15 @@
             this.panel1.Size = new System.Drawing.Size(995, 80);
             this.panel1.TabIndex = 0;
             // 
+            // btn_Search
+            // 
+            this.btn_Search.AutoSize = true;
+            this.btn_Search.Location = new System.Drawing.Point(23, 32);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(44, 13);
+            this.btn_Search.TabIndex = 8;
+            this.btn_Search.Text = "Search:";
+            // 
             // btn_Edit
             // 
             this.btn_Edit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -65,7 +74,6 @@
             this.btn_Edit.TabIndex = 6;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // ShowBTN
             // 
@@ -74,7 +82,7 @@
             this.ShowBTN.Name = "ShowBTN";
             this.ShowBTN.Size = new System.Drawing.Size(63, 29);
             this.ShowBTN.TabIndex = 0;
-            this.ShowBTN.Text = "Go";
+            this.ShowBTN.Text = "View";
             this.ShowBTN.UseVisualStyleBackColor = true;
             this.ShowBTN.Click += new System.EventHandler(this.ShowBTN_Click);
             // 
@@ -127,15 +135,7 @@
             this.dtgRecords.ReadOnly = true;
             this.dtgRecords.Size = new System.Drawing.Size(995, 437);
             this.dtgRecords.TabIndex = 0;
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.AutoSize = true;
-            this.btn_Search.Location = new System.Drawing.Point(23, 32);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(44, 13);
-            this.btn_Search.TabIndex = 8;
-            this.btn_Search.Text = "Search:";
+            this.dtgRecords.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgRecords_CellClick_1);
             // 
             // HomeownersUI
             // 

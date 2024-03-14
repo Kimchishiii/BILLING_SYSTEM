@@ -1,5 +1,6 @@
 ﻿using BILLING_SYSTEM.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,17 +69,75 @@ namespace BILLING_SYSTEM
 
         private void deleteBTN_Click(object sender, EventArgs e)
         {
-            
-               
-            
+            var query = "DELETE FROM HomeOwners WHERE HomeOwnerId = @HomeOwnerId";
+            cmd.CommandText = query;
+
+            cmd.Parameters.AddWithValue("@HomeOwnerId", selectedId);
+
+            conn.Open();
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete the row?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                try
+                {
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Row deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FetchData(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("No rows were deleted. Verify the selected ID.", "No Rows Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            else
+            {
+                conn.Close();
+            }
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            UpdateHomeowner displayUpdateHomeownerForm = new UpdateHomeowner();
-            displayUpdateHomeownerForm.Show();
 
-            this.Show();
+        public void btn_Edit_Click(object sender, EventArgs e)
+            {
+                HomeOwners data = GetData();
+                UpdateHomeowner displayUpdateHomeownerForm = new UpdateHomeowner(data);
+                displayUpdateHomeownerForm.Show();
+            }
+            string selectedId;
+            DataGridViewRow row;
+            public void dtgRecords_CellClick(object sender, DataGridViewCellEventArgs e)
+            {
+               
+            }
+            private HomeOwners GetData()
+            {
+                return new HomeOwners
+                {
+                    HomeOwnerId = int.Parse(selectedId),
+                    FullName = row.Cells[1].Value.ToString(),
+                    ContactNo = row.Cells[2].Value.ToString(),
+                    Email = row.Cells[3].Value.ToString(),
+                    PhaseName = row.Cells[4].Value.ToString(),
+                    Block = row.Cells[5].Value.ToString(),
+                    Lot = row.Cells[6].Value.ToString(),
+                    MoveInDate = Convert.ToDateTime(row.Cells[7].Value),
+                };
+            }
+
+        private void dtgRecords_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            this.row = dtgRecords.Rows[index];
+            this.selectedId = row.Cells[0].Value.ToString();
         }
     }
-}
+    }
+

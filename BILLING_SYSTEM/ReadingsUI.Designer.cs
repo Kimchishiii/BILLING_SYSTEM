@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Go_BTNRead = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Search = new System.Windows.Forms.Label();
             this.printBTN = new System.Windows.Forms.Button();
             this.Delete_BTN = new System.Windows.Forms.Button();
             this.Edit_BTN = new System.Windows.Forms.Button();
-            this.Show_BTN = new System.Windows.Forms.Button();
+            this.View_BTN = new System.Windows.Forms.Button();
             this.SearchBarTextBox = new System.Windows.Forms.TextBox();
             this.Date_Readings = new System.Windows.Forms.DateTimePicker();
             this.Readings_Panel = new System.Windows.Forms.Panel();
             this.dgt_Readings = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_Search = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Readings_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgt_Readings)).BeginInit();
@@ -51,13 +51,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.Go_BTNRead);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Search);
             this.panel1.Controls.Add(this.printBTN);
             this.panel1.Controls.Add(this.Delete_BTN);
             this.panel1.Controls.Add(this.Edit_BTN);
-            this.panel1.Controls.Add(this.Show_BTN);
+            this.panel1.Controls.Add(this.View_BTN);
             this.panel1.Controls.Add(this.SearchBarTextBox);
             this.panel1.Controls.Add(this.Date_Readings);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,6 +65,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(819, 120);
             this.panel1.TabIndex = 0;
+            // 
+            // Go_BTNRead
+            // 
+            this.Go_BTNRead.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Go_BTNRead.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Go_BTNRead.Location = new System.Drawing.Point(279, 69);
+            this.Go_BTNRead.Name = "Go_BTNRead";
+            this.Go_BTNRead.Size = new System.Drawing.Size(75, 26);
+            this.Go_BTNRead.TabIndex = 9;
+            this.Go_BTNRead.Text = "Go";
+            this.Go_BTNRead.UseVisualStyleBackColor = true;
+            this.Go_BTNRead.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Date from:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.AutoSize = true;
+            this.btn_Search.Location = new System.Drawing.Point(12, 37);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(44, 13);
+            this.btn_Search.TabIndex = 7;
+            this.btn_Search.Text = "Search:";
             // 
             // printBTN
             // 
@@ -100,16 +131,16 @@
             this.Edit_BTN.Text = "Edit";
             this.Edit_BTN.UseVisualStyleBackColor = true;
             // 
-            // Show_BTN
+            // View_BTN
             // 
-            this.Show_BTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Show_BTN.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Show_BTN.Location = new System.Drawing.Point(280, 29);
-            this.Show_BTN.Name = "Show_BTN";
-            this.Show_BTN.Size = new System.Drawing.Size(75, 23);
-            this.Show_BTN.TabIndex = 2;
-            this.Show_BTN.Text = "View";
-            this.Show_BTN.UseVisualStyleBackColor = true;
+            this.View_BTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.View_BTN.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.View_BTN.Location = new System.Drawing.Point(277, 32);
+            this.View_BTN.Name = "View_BTN";
+            this.View_BTN.Size = new System.Drawing.Size(75, 23);
+            this.View_BTN.TabIndex = 2;
+            this.View_BTN.Text = "View";
+            this.View_BTN.UseVisualStyleBackColor = true;
             // 
             // SearchBarTextBox
             // 
@@ -125,6 +156,7 @@
             this.Date_Readings.Name = "Date_Readings";
             this.Date_Readings.Size = new System.Drawing.Size(200, 20);
             this.Date_Readings.TabIndex = 0;
+            this.Date_Readings.ValueChanged += new System.EventHandler(this.Date_Readings_ValueChanged);
             // 
             // Readings_Panel
             // 
@@ -162,36 +194,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(430, 397);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btn_Search
-            // 
-            this.btn_Search.AutoSize = true;
-            this.btn_Search.Location = new System.Drawing.Point(9, 32);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(44, 13);
-            this.btn_Search.TabIndex = 7;
-            this.btn_Search.Text = "Search:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Date from:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(280, 72);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Go";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // ReadingsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,12 +225,12 @@
         private System.Windows.Forms.Button printBTN;
         private System.Windows.Forms.Button Delete_BTN;
         private System.Windows.Forms.Button Edit_BTN;
-        private System.Windows.Forms.Button Show_BTN;
+        private System.Windows.Forms.Button View_BTN;
         private System.Windows.Forms.TextBox SearchBarTextBox;
         private System.Windows.Forms.DataGridView dgt_Readings;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Go_BTNRead;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label btn_Search;
     }

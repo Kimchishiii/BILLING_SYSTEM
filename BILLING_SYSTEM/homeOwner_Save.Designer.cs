@@ -77,6 +77,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 376);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dtCreatedDate
             // 
@@ -237,6 +238,7 @@
             // 
             // txtGenerateId
             // 
+            this.txtGenerateId.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtGenerateId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGenerateId.Location = new System.Drawing.Point(137, 37);
             this.txtGenerateId.Name = "txtGenerateId";

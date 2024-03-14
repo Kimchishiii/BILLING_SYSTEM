@@ -229,6 +229,7 @@
             this.Name = "UpdateHomeowner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateHomeowner";
+            this.Load += new System.EventHandler(this.UpdateHomeowner_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
