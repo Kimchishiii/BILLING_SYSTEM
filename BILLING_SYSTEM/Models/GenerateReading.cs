@@ -6,36 +6,29 @@ using System.Threading.Tasks;
 
 namespace BILLING_SYSTEM.Models
 {
-    public class HomeOwners
+    public class GenerateReading
     {
         int homeOwnerId;
         string fullName;
-        string contactNo;
-        string email;
         string phaseName;
         string block;
         string lot;
-        DateTime moveInDate;
-        DateTime created_at;
         DateTime lastReading;
         decimal previousReading;
-        DateTime lastCollected;
+        decimal currentReading;
         string waterServiceStatus;
-        string garbageCollectionStatus;
-
+        decimal variance;
+        decimal totalAmount;
         public int HomeOwnerId { get => homeOwnerId; set => homeOwnerId = value; }
         public string FullName { get => fullName; set => fullName = value; }
-        public string ContactNo { get => contactNo; set => contactNo = value; }
-        public string Email { get => email; set => email = value; }
         public string PhaseName { get => phaseName; set => phaseName = value; }
         public string Block { get => block; set => block = value; }
         public string Lot { get => lot; set => lot = value; }
-        public DateTime MoveInDate { get => moveInDate; set => moveInDate = value; }
-        public DateTime Created_at { get => created_at; set => created_at = value; }
         public DateTime LastReading { get => lastReading; set => lastReading = value; }
         public decimal PreviousReading { get => previousReading; set => previousReading = value; }
-        public DateTime LastCollected { get => lastCollected; set => lastCollected = value; }
         public string WaterServiceStatus { get => waterServiceStatus; set => waterServiceStatus = value; }
-        public string GarbageCollectionStatus { get => garbageCollectionStatus; set => garbageCollectionStatus = value; }
+        public decimal CurrentReading { get => currentReading; set => currentReading = value; }
+        public decimal Variance { get => variance; set => variance = value; }
+        public decimal TotalAmount { get => totalAmount; set => totalAmount = value; }
     }
 }

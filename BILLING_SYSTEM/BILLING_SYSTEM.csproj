@@ -66,6 +66,12 @@
       <DependentUpon>configurationUI.cs</DependentUpon>
     </Compile>
     <Compile Include="dbServer.cs" />
+    <Compile Include="EditReading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReading.Designer.cs">
+      <DependentUpon>EditReading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,7 @@
     <Compile Include="homeOwner_Save.Designer.cs">
       <DependentUpon>homeOwner_Save.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\GenerateReading.cs" />
     <Compile Include="Models\HomeOwners.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="configurationUI.resx">
       <DependentUpon>configurationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReading.resx">
+      <DependentUpon>EditReading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

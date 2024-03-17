@@ -25,10 +25,10 @@ namespace BILLING_SYSTEM
 
         private void EditBTN_Click(object sender, EventArgs e)
         {
+            
             homeOwner_Save displayhomeOwner_SaveForm = new homeOwner_Save();
-            displayhomeOwner_SaveForm.Show();
-
-            this.Show();
+            displayhomeOwner_SaveForm.ShowDialog();
+            FetchData();
         }
 
         private void HomeownersUI_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace BILLING_SYSTEM
             cmd.Connection = conn;
             FetchData();
         }
-        private void FetchData()
+        public void FetchData()
         {
             string selectquery = "select * from HomeOwners";
             SqlDataAdapter adpt = new SqlDataAdapter(selectquery, conn);
@@ -57,11 +57,24 @@ namespace BILLING_SYSTEM
                 homeOwner.Lot = Convert.ToString(table.Rows[i]["Lot"]);
                 homeOwner.MoveInDate = Convert.ToDateTime(table.Rows[i]["MoveInDate"]);
                 homeOwner.Created_at = Convert.ToDateTime(table.Rows[i]["Created_at"]);
+                homeOwner.LastReading = Convert.ToDateTime(table.Rows[i]["LastReading"]);
+                homeOwner.PreviousReading = Convert.ToDecimal(table.Rows[i]["PreviousReading"]);
+                homeOwner.LastCollected = Convert.ToDateTime(table.Rows[i]["LastCollected"]);
+                homeOwner.WaterServiceStatus = Convert.ToString(table.Rows[i]["WaterServiceStatus"]);
+                homeOwner.GarbageCollectionStatus = Convert.ToString(table.Rows[i]["GarbageCollectionStatus"]);
                 homeOwners.Add(homeOwner);
             }
             dtgRecords.DataSource = homeOwners;
+            LimitDataGridView();
         }
-
+        private void LimitDataGridView()
+        {
+            dtgRecords.Columns["LastReading"].Visible = false;
+            dtgRecords.Columns["PreviousReading"].Visible = false;
+            dtgRecords.Columns["LastCollected"].Visible = false;
+            dtgRecords.Columns["WaterServiceStatus"].Width = 150;
+            dtgRecords.Columns["GarbageCollectionStatus"].Width = 176;
+        }
         private void ShowBTN_Click(object sender, EventArgs e)
         {
             FetchData();
@@ -69,6 +82,8 @@ namespace BILLING_SYSTEM
 
         private void deleteBTN_Click(object sender, EventArgs e)
         {
+            DataGridViewRow selectedRow = dtgRecords.CurrentRow;
+            int selectedId = Convert.ToInt32(selectedRow.Cells["HomeOwnerId"].Value);
             var query = "DELETE FROM HomeOwners WHERE HomeOwnerId = @HomeOwnerId";
             cmd.CommandText = query;
 
@@ -106,37 +121,54 @@ namespace BILLING_SYSTEM
 
 
         public void btn_Edit_Click(object sender, EventArgs e)
-            {
-                HomeOwners data = GetData();
-                UpdateHomeowner displayUpdateHomeownerForm = new UpdateHomeowner(data);
-                displayUpdateHomeownerForm.Show();
-            }
-            string selectedId;
-            DataGridViewRow row;
-            public void dtgRecords_CellClick(object sender, DataGridViewCellEventArgs e)
-            {
-               
-            }
-            private HomeOwners GetData()
-            {
-                return new HomeOwners
-                {
-                    HomeOwnerId = int.Parse(selectedId),
-                    FullName = row.Cells[1].Value.ToString(),
-                    ContactNo = row.Cells[2].Value.ToString(),
-                    Email = row.Cells[3].Value.ToString(),
-                    PhaseName = row.Cells[4].Value.ToString(),
-                    Block = row.Cells[5].Value.ToString(),
-                    Lot = row.Cells[6].Value.ToString(),
-                    MoveInDate = Convert.ToDateTime(row.Cells[7].Value),
-                };
-            }
-
-        private void dtgRecords_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            this.row = dtgRecords.Rows[index];
-            this.selectedId = row.Cells[0].Value.ToString();
+            HomeOwners data = GetData();
+            UpdateHomeowner displayUpdateHomeownerForm = new UpdateHomeowner(data);
+            displayUpdateHomeownerForm.Show();
+            FetchData();
+            
+        }
+        public void dtgRecords_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+               
+        }
+        private HomeOwners GetData()
+        {
+            DataGridViewRow selectedRow = dtgRecords.CurrentRow;
+            return new HomeOwners
+            {
+                HomeOwnerId = Convert.ToInt32(selectedRow.Cells["HomeOwnerId"].Value),
+                FullName = selectedRow.Cells["FullName"].Value.ToString(),
+                ContactNo = selectedRow.Cells["ContactNo"].Value.ToString(),
+                Email = selectedRow.Cells["Email"].Value.ToString(),
+                PhaseName = selectedRow.Cells["PhaseName"].Value.ToString(),
+                Block = selectedRow.Cells["Block"].Value.ToString(),
+                Lot = selectedRow.Cells["Lot"].Value.ToString(),
+                MoveInDate = Convert.ToDateTime(selectedRow.Cells["MoveInDate"].Value),
+                LastReading = Convert.ToDateTime(selectedRow.Cells["LastReading"].Value),
+                PreviousReading = Convert.ToDecimal(selectedRow.Cells["PreviousReading"].Value),
+                LastCollected = Convert.ToDateTime(selectedRow.Cells["LastCollected"].Value),
+                WaterServiceStatus = selectedRow.Cells["WaterServiceStatus"].Value.ToString(),
+                GarbageCollectionStatus = selectedRow.Cells["GarbageCollectionStatus"].Value.ToString(),
+            };
+        }
+
+        private void btn_Edit_Click_1(object sender, EventArgs e)
+        {
+            HomeOwners data = GetData();
+            homeOwner_Save displayUpdateHomeownerForm = new homeOwner_Save(data);
+            displayUpdateHomeownerForm.ShowDialog();
+            FetchData();
+        }
+
+        private void dtgRecords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtgRecords_CellClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }
